@@ -5,7 +5,7 @@
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Bem Vindo to Xamarin Forms and Prism!" />
+        <Label Text="Bem vindo to Xamarin Forms and Prism!" />
 
         <Button Text="Proxima" Command="{Binding BotaoCommand}"></Button>
         
