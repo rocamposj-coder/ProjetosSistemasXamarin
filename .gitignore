@@ -3,3 +3,11 @@
 ################################################################################
 
 /PrimeiroXamarin/.vs/PrimeiroXamarin
+/PrimeiroXamarin/PrimeiroXamarin/PrimeiroXamarin/bin/Debug/netstandard2.0
+/PrimeiroXamarin/PrimeiroXamarin/PrimeiroXamarin/obj
+/PrimeiroXamarin/PrimeiroXamarin/PrimeiroXamarin.Android/bin/Debug
+/PrimeiroXamarin/PrimeiroXamarin/PrimeiroXamarin.Android/obj
+/PrimeiroXamarin/PrimeiroXamarin/PrimeiroXamarin.iOS/obj
+/WebAppEnt/.vs/WebAppEnt
+/WebAppEnt/WebAppEnt/bin/Debug/netcoreapp3.1
+/WebAppEnt/WebAppEnt/obj
