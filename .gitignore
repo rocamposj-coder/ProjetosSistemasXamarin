@@ -2,10 +2,4 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/BlankApp1/BlankApp1/BlankApp1/bin/Debug/netstandard2.0
-/BlankApp1/BlankApp1/BlankApp1/obj
-/BlankApp1/BlankApp1/BlankApp1.Android/bin/Debug
-/BlankApp1/BlankApp1/BlankApp1.Android/obj
-/BlankApp1/BlankApp1/BlankApp1.iOS/obj
-/BlankApp1/.vs/BlankApp1
-/.vs
+/PrimeiroXamarin/.vs/PrimeiroXamarin
