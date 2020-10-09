@@ -8,5 +8,6 @@ namespace PrimeiroXamarin.Servicos
     public interface IServicos
     {
         List<Aluno> ObterTodosAlunos();
+        bool ExcluirAluno(Aluno aluno);
     }
 }

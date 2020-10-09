@@ -33,9 +33,6 @@ namespace PrimeiroXamarin.Servicos
             List<Aluno> resposta = null ;
             try
             {
-
-
-
                 //IDictionary<string, object> queryParams = new Dictionary<string, object>();
                 //queryParams.Add("id", 2);
 
@@ -60,6 +57,38 @@ namespace PrimeiroXamarin.Servicos
            
             return resposta;
            
+        }
+
+
+
+        public bool ExcluirAluno(Aluno aluno)
+        {
+
+            string uri = "https://100.100.100.181:5001/api/alunos";
+            HttpResponseMessage resposta = null;
+            try
+            {
+                uri += "/" + aluno.IdAluno;
+
+                resposta = uri
+                    .WithTimeout(1)                    
+                    .DeleteAsync().Result;
+                
+                if (resposta.IsSuccessStatusCode)
+                    return true;
+                
+            }
+            catch (FlurlHttpException flurlE)
+            {
+                String msg = flurlE.Message;
+            }
+            catch (Exception e)
+            {
+                String msg = e.Message;
+            }
+
+            
+            return false;
         }
     }
 

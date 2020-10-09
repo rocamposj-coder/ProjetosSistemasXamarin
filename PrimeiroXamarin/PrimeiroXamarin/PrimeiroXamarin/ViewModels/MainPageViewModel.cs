@@ -4,6 +4,7 @@ using PrimeiroXamarin.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,8 +69,9 @@ namespace PrimeiroXamarin.ViewModels
 
 
         public MainPageViewModel(INavigationService navigationService,
+            IPageDialogService pageDialogService,
             IServicos iServicos)
-            : base(navigationService)
+            : base(navigationService, pageDialogService)
         {
             _iServicos = iServicos;
             Title = "Main Page";

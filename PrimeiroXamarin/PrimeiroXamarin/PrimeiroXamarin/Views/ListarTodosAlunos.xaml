@@ -4,8 +4,7 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PrimeiroXamarin.Views.ListarTodosAlunos"
-             x:Name="ListarTodosAlunosPage"
-             
+             x:Name="ListarTodosAlunosPage"             
              Title="{Binding Title}">
 
     <RelativeLayout Padding="0" HorizontalOptions="FillAndExpand">
@@ -38,7 +37,7 @@
 
 
 
-                                <!-- CARD DIAS PROGRAMADOS E VENDIDOS  -->
+                                
                                 <Frame Padding="0,0,0,0" CornerRadius="0" HasShadow="True"
                                                    BackgroundColor="DarkSeaGreen"                                                   
                                                    IsClippedToBounds="True"
@@ -60,7 +59,7 @@
 
                                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
 
-                                            <Label              Text="Nome aluno: " 
+                                            <Label          Text="Nome aluno: " 
                                                             FontAttributes="Bold" 
                                                             FontSize="Medium"
                                                             TextColor="DarkOliveGreen"/>
@@ -102,6 +101,8 @@
                                                         FontSize="Medium"   
                                                         FontAttributes="Bold"
                                                         HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                                        Command="{Binding Source={x:Reference ListarTodosAlunosPage}, Path=BindingContext.ExcluirAlunoCommand}"  
+                                                        CommandParameter="{Binding .}"
                                                       />
 
                                         </StackLayout>
