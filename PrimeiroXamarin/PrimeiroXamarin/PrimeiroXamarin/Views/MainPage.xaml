@@ -8,6 +8,21 @@
         <Label Text="{Binding Saida}"  FontSize="Large"/>
         <Entry Text="{Binding Entrada}"></Entry>
         <Button Text="{Binding NomeBotao}" Command="{Binding BotaoOKCommand}"></Button>
+        
+        <!-- NOVIDADES -->
+
+        <Button Text="Listar Todos"  Command="{Binding BotaoListarTodosCommand}" />
+<!--
+        <Button Text="Listar Aluno"  Command="{Binding BotaoListarEspecificoCommand}" />
+
+        <Button Text="Atualizar Aluno"  Command="{Binding BotaoAtualizarAlunoCommand}" />
+
+        <Button Text="Remover Aluno"  Command="{Binding BotaoRemoverAlunoCommand}" />
+
+        <Button Text="Inserir Aluno"  Command="{Binding BotaoInserirAlunoCommand}" />
+-->
+
+        <!-- NOVIDADES -->
     </StackLayout>
 
 </ContentPage>

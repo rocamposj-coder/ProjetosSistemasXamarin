@@ -7,5 +7,16 @@
 
     <!-- Application resource dictionary -->
 
-  </Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="MainColor">#48bb6f</Color>
+            <Color x:Key="MainBarTextColor">White</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource MainColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource MainBarTextColor}" />
+                
+            </Style>
+        </ResourceDictionary>
+
+    </Application.Resources>
 </prism:PrismApplication>

@@ -31,6 +31,7 @@ namespace PrimeiroXamarin
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<Page2, Page2ViewModel>();
+            containerRegistry.RegisterForNavigation<ListarTodosAlunos, ListarTodosAlunosViewModel>();
         }
     }
 }

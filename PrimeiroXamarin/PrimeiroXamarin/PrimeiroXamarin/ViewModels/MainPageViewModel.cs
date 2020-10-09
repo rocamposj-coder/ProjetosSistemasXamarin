@@ -42,6 +42,14 @@ namespace PrimeiroXamarin.ViewModels
 
         public DelegateCommand BotaoOKCommand => new DelegateCommand(async () => await ExecuteBotaoOKAsync());
 
+
+        public DelegateCommand BotaoListarTodosCommand => new DelegateCommand(async () => await ListarTodosAsync());
+        //public DelegateCommand BotaoListarEspecificoCommand => new DelegateCommand(async () => await ListarEspecificoAsync());
+        //public DelegateCommand BotaoAtualizarAlunoCommand => new DelegateCommand(async () => await AtualizarAlunoAsync());
+        //public DelegateCommand BotaoRemoverAlunoCommand => new DelegateCommand(async () => await RemoverAlunoAsync());
+        //public DelegateCommand BotaoInserirAlunoCommand => new DelegateCommand(async () => await ListarTodosAsync());
+        
+
         private async Task ExecuteBotaoOKAsync()
         {
           List<Aluno> listAlunos = _iServicos.ObterTodosAlunos();
@@ -50,6 +58,14 @@ namespace PrimeiroXamarin.ViewModels
             NomeBotao = Entrada;
             await NavigationService.NavigateAsync($"{nameof(Page2)}");
         }
+
+        
+        private async Task ListarTodosAsync()
+        {   
+            await NavigationService.NavigateAsync($"{nameof(ListarTodosAlunos)}");
+        }
+
+
 
         public MainPageViewModel(INavigationService navigationService,
             IServicos iServicos)

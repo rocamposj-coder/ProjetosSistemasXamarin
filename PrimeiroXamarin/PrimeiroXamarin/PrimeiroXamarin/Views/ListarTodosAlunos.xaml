@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrimeiroXamarin.Views.ListarTodosAlunos"
+             x:Name="ListarTodosAlunosPage"
+             
+             Title="{Binding Title}">
+
+    <RelativeLayout Padding="0" HorizontalOptions="FillAndExpand">
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     BackgroundColor="Transparent"
+                     RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                     RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+
+            <ListView x:Name="lvAlunos"            
+                              AutomationId="lvAlunos"
+                              IsVisible="true"
+                              ItemsSource="{Binding ListaAlunos}"
+                              HasUnevenRows="true" 
+                              SeparatorVisibility="None"
+                                  VerticalOptions="FillAndExpand"                                  
+                                  BackgroundColor="Transparent"
+                                  SelectionMode="None">
+                <x:Arguments>
+                    <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+                </x:Arguments>
+
+
+                <!-- ITENS da LISTA : Cards (frames) de cada aluno -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+
+
+
+                                <!-- CARD DIAS PROGRAMADOS E VENDIDOS  -->
+                                <Frame Padding="0,0,0,0" CornerRadius="0" HasShadow="True"
+                                                   BackgroundColor="DarkSeaGreen"                                                   
+                                                   IsClippedToBounds="True"
+                                                   BorderColor="Transparent">
+                                    <Frame.OutlineColor>
+                                        <OnPlatform x:TypeArguments="Color"  Android="LightGray"  iOS="LightGray"/>
+                                    </Frame.OutlineColor>
+                                    <Frame.Margin>
+                                        <OnPlatform x:TypeArguments="Thickness" Android="15,0,15,20" iOS="15,0,15,20" />
+                                    </Frame.Margin>
+
+
+                                    <StackLayout HorizontalOptions="FillAndExpand"
+                                                                VerticalOptions="FillAndExpand"
+                                                                Orientation="Vertical"
+                                                                BackgroundColor="White"
+                                                                Padding="25,5,0,20"
+                                                                Spacing="0">
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
+
+                                            <Label              Text="Nome aluno: " 
+                                                            FontAttributes="Bold" 
+                                                            FontSize="Medium"
+                                                            TextColor="DarkOliveGreen"/>
+                                            <Label  x:Name="lblNomeAluno" 
+                                                            AutomationId="lblNomeAluno"
+                                                            Text="{Binding  Nome}"                                                             
+                                                            FontAttributes="None" 
+                                                            FontSize="Medium"
+                                                            TextColor="DarkOliveGreen"/>
+
+                                        </StackLayout>
+
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
+
+                                            <Label  Text="Telefone: "                                                           
+                                                            FontAttributes="None" 
+                                                            FontSize="Small"
+                                                            TextColor="DarkOliveGreen"/>
+
+                                            <Label  x:Name="lblTelefone" 
+                                                            AutomationId="lblTelefone"
+                                                            Text="{Binding Telefone}"                                                           
+                                                            FontAttributes="None" 
+                                                            FontSize="Small"
+                                                            TextColor="DarkOliveGreen"/>
+
+                                        </StackLayout>
+
+
+                                        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,20,20,0"  IsVisible="{Binding VisibilidadeDiasVendidos}">
+                                            <Button  
+                                                        x:Name="btnExcluirAluno"
+                                                        AutomationId="btnExcluirAluno" 
+                                                        Text="Excluir"
+                                                        IsVisible="true"
+                                                        BackgroundColor="LightGreen"
+                                                        TextColor="DarkGreen"                                                       
+                                                        FontSize="Medium"   
+                                                        FontAttributes="Bold"
+                                                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                                      />
+
+                                        </StackLayout>
+
+                                        <StackLayout.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="10,0,0,0" iOS="10,0,0,0" />
+                                        </StackLayout.Margin>
+
+                                    </StackLayout>
+
+                                    <!--
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference ListarTodosAlunosPage}, Path=BindingContext.ExibirDetalhesAlunoCommand}"   CommandParameter="{Binding .}"   NumberOfTapsRequired="1" />
+                                </Frame.GestureRecognizers>
+                                -->
+
+
+                                </Frame>
+
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </RelativeLayout>
+
+
+</ContentPage>

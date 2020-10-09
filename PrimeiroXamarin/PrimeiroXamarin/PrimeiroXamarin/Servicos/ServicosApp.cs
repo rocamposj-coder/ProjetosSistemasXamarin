@@ -19,17 +19,17 @@ namespace PrimeiroXamarin.Servicos
 
         public ServicosApp(IPageDialogService pageDialogService)
         {
-           /*
-            * FlurlHttp.Configure(settings => {
+           
+             FlurlHttp.Configure(settings => {
                 settings.HttpClientFactory = new MyCustomHttpClientFactory();
 
-            });*/
+            });
         }
 
         public List<Aluno> ObterTodosAlunos()
         {
-            //string uri = $"https://100.100.100.181:44378/api/alunos";
-            string uri = "http://100.100.100.181:5000/api/alunos";
+
+            string uri = "https://100.100.100.181:5001/api/alunos";
             List<Aluno> resposta = null ;
             try
             {
@@ -40,7 +40,7 @@ namespace PrimeiroXamarin.Servicos
                 //queryParams.Add("id", 2);
 
                 resposta = uri 
-                    .WithTimeout(1)
+                    .WithTimeout(1)                    
                     .GetJsonAsync<List<Aluno>>().Result;
 
                 //.SetQueryParams(queryParams)
