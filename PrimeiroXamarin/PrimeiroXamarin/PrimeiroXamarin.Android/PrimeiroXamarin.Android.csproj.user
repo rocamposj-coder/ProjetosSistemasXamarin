@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
-    <SelectedDevice>pixel3q10_0</SelectedDevice>
-    <DefaultDevice>pixel3q10_0</DefaultDevice>
+    <SelectedDevice>nexus_telapequena</SelectedDevice>
+    <DefaultDevice>nexus_telapequena</DefaultDevice>
   </PropertyGroup>
 </Project>
